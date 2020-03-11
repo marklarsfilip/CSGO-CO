@@ -26,13 +26,11 @@ choco install -y nodejs.install python2 jdk8
 
 #### Create new Application
 ```
-
 npx react-native init AwesomeProject
 ```
 
 #### Run Application
 ```
-
 cd AwesomeProject
 npx react-native run-android
 ```
