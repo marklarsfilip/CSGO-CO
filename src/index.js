@@ -1,15 +1,13 @@
 import React from 'react';
 import { View, SafeAreaView } from 'react-native';
 
-// Atoms
-import { ButtonSmall } from '_atoms';
-
-//Scenes
+//router
+import Tabs from './router';
 
 const App = () => (
-  <SafeAreaView>
-    <View>
-      <ButtonSmall name="Testar knapp" />
+  <SafeAreaView style={{flex: 1}}>
+    <View style={{flex: 1}}>
+      <Tabs />
     </View>
   </SafeAreaView>
 );
