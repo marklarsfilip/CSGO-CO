@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Samuel Lind",
+    "credits": "200",
+    "inventory": {
+      "cases": [{
+        "type": "Normal",
+        "name": "Normal Case"
+      }, {
+        "type": "Normal",
+        "name": "Normal Case"
+      }]
+    }
+  }
+]

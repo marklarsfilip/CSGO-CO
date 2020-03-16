@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button, Alert } from 'react-native';
+import { Button } from 'react-native';
 
-const ButtonSmall = ({name}) => <Button title={ name } onPress={() => Alert.alert('Press button')} />
+const ButtonSmall = ({title}, {onPress = () => {}}) => <Button title={ title } onPress={onPress} />
 
 export default ButtonSmall;
