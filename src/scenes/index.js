@@ -1,4 +1,4 @@
-export { default as Home } from './screens/Home';
-export { default as Stash } from './screens/Stash';
-export { default as Market } from './screens/Market';
-export { default as Settings } from './screens/Settings';
+export {default as Home} from './views/Home';
+export {default as Stash} from './views/Stash';
+export {default as Market} from './views/Market';
+export {default as Settings} from './views/Settings';
