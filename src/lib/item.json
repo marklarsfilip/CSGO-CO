@@ -1,0 +1,24 @@
+[
+  {
+    "name": "",
+    "id": "",
+    "rarity": "",
+    "type": "",
+    "case": "",
+    "collection": "",
+    "wear": "",
+    "design-pattern": "",
+    "price": ""
+  },
+  {
+    "name": "Golden plated Glock-19",
+    "id": "1.0001",
+    "rarity": "Legendary",
+    "type": "Handgun",
+    "case": "Cartel case",
+    "collection": "Gold",
+    "wear": "Pristine",
+    "design-pattern": "Golden plated",
+    "price": "1300"
+  }
+]
