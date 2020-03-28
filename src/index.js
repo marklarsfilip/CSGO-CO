@@ -11,7 +11,7 @@ import TopInformation from './scenes/globals/TopBar';
 import TempUser from './lib/user';
 
 //scripts
-import testItem from './scripts/generateItem';
+import generateItem from './scripts/generateItem';
 
 function getTempUser() {
   return fetch('/lib/user')
@@ -37,8 +37,8 @@ const App = () => (
   </SafeAreaView>
 );
 
-const item = testItem();
-console.log(item);
+// const item = testItem();
+console.log(generateItem());
 
 export default App;
 

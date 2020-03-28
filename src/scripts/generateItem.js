@@ -1,13 +1,32 @@
-export default function generateTestItem(selectedCase) {
-  const rarity = generateRarity(selectedCase);
-  const type = generateType(selectedCase);
-  const pattern = generatePattern(selectedCase);
-  const wear = generateWear(type);
+import generateRarity from './itemRelated/getRarity';
+import generateType from './itemRelated/getType';
+import generateWear from './itemRelated/getWear';
+import generatePattern from './itemRelated/getPattern';
+
+export default function generateItem() {
+  const testCase = {
+    name: 'testCase 2020',
+    id: '2.001',
+    rarityLevel: {
+      Yellow: 2,
+      Orange: 10,
+      Pink: 25,
+    },
+    types: ['bags', 'clothes', 'shoes'],
+    collection: 'test',
+    patterns: ['Gucci', 'Louis Vuitton'],
+    wear: 'all',
+  };
+
+  const rarity = generateRarity(testCase.rarityLevel);
+  const type = generateType(testCase.types);
+  const pattern = generatePattern(testCase.patterns);
+  const wear = generateWear(testCase.wear);
 
   const item = {
-    name: 'test',
+    name: 'Automatiskt',
     id: '1.001',
-    case: selectedCase.name,
+    case: testCase.name,
     rarity,
     type,
     pattern,
@@ -15,24 +34,4 @@ export default function generateTestItem(selectedCase) {
   };
 
   return item;
-}
-
-function generateRarity(selectedCase) {
-  const rarity = '';
-  return rarity;
-}
-
-function generateType(selectedCase) {
-  const type = '';
-  return type;
-}
-
-function generatePattern(selectedCase) {
-  const pattern = '';
-  return pattern;
-}
-
-function generateWear(type) {
-  const wear = '';
-  return wear;
 }

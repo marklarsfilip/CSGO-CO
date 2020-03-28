@@ -1,0 +1,25 @@
+[
+  {
+    "1": "Yellow",
+    "2": "Orange",
+    "3": "Pink",
+    "4": "Purple",
+    "5": "Blue",
+    "6": "Green",
+    "7": "White",
+    "8": "Gray",
+    "Special editions": "Red, Teal"
+  },
+  {
+    "min": 1,
+    "max": 1000,
+    "Yellow": 1,
+    "Orange": 5,
+    "Pink": 10,
+    "Purple": 25,
+    "Blue": 75,
+    "Green": 150,
+    "White": 500,
+    "Gray": 750
+  }
+]
