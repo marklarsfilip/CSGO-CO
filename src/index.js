@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, SafeAreaView, Button, StatusBar, StyleSheet} from 'react-native';
+import {View, SafeAreaView, Button, StatusBar, StyleSheet, Text} from 'react-native';
 
 //router
 import Tabs from './router';
@@ -19,6 +19,7 @@ const App = () => (
     <Button title="PRess me" onPress={() => this.getTempUser} />
     <View style={{flex: 1}}>
       <Tabs />
+      <Text>{JSON.stringify(generateItem())}</Text>
     </View>
   </SafeAreaView>
 );
