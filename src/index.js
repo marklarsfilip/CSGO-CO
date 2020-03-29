@@ -7,22 +7,8 @@ import Tabs from './router';
 //global views
 import TopInformation from './scenes/globals/TopBar';
 
-//Temp user
-import TempUser from './lib/user';
-
 //scripts
 import generateItem from './scripts/generateItem';
-
-function getTempUser() {
-  return fetch('/lib/user')
-    .then(response => response.json())
-    .then(responseJson => {
-      console.log(responseJson);
-    })
-    .catch(error => {
-      console.error(error);
-    });
-}
 
 const App = () => (
   <SafeAreaView style={{flex: 1}}>
