@@ -1,5 +1,5 @@
 // import itemTypes from '../../lib/items.json
-// Hämtas från extern fil egentligen
+// Hämtas från extern plats egentligen
 const possibleitemTypes = [
   {
     bags: ['Handbag', 'Sportsbag', 'becknarväska'],

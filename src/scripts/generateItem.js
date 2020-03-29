@@ -16,7 +16,7 @@ export default function generateItem() {
     types: ['bags', 'clothes', 'shoes'],
     collection: 'test',
     patterns: ['Gucci', 'Louis Vuitton'],
-    wear: 'all',
+    wear: [], // ['Pristine', 'Shiny']
   };
 
   const id = generateId();
