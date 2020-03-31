@@ -17,15 +17,17 @@ import TopInformation from './scenes/globals/TopBar';
 //scripts
 import generateItem from './scripts/generateItem';
 
+// Styles
+import main from '_styles';
+
 let item = {};
 
 const App = () => (
-  <SafeAreaView style={{flex: 1}}>
+  <SafeAreaView style={{flex: 1, backgroundColor: main.colors.primary}}>
     <StatusBar backgroundColor="#222" barStyle="light-content" />
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={main.components.topBar.styles.container}>
       <TopInformation />
     </SafeAreaView>
-    <Button title="PRess me" onPress={() => this.getTempUser} />
     <View style={{flex: 1}}>
       <Tabs />
       <Text>{JSON.stringify(item)}</Text>
@@ -40,12 +42,3 @@ const App = () => (
 console.log(generateItem());
 
 export default App;
-
-const styles = StyleSheet.create({
-  container: {
-    flexWrap: 'nowrap',
-    height: 30,
-    backgroundColor: '#333',
-    paddingHorizontal: 10,
-  },
-});

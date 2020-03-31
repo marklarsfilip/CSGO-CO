@@ -1,9 +1,13 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
+
+// Styles
+import main from '_styles';
 
 const Home = () => (
-  <View>
-    <Text>Home screen</Text>
+  <View style={main.scenes.home.container}>
+    <View>
+    </View>
   </View>
 );
 

@@ -5,12 +5,21 @@ import { NavigationContainer } from '@react-navigation/native';
 //Scenes
 import { Home, Stash, Market, Settings } from '_scenes';
 
+
+// Styles
+import main from './styles/index';
+
 const Tab = createMaterialTopTabNavigator();
 
 export default function Tabs() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator tabBarOptions={{
+        activeTintColor: main.colors.white,
+        labelStyle: { fontSize: 14 },
+        style: { backgroundColor: main.colors.primaryVariant },
+        indicatorStyle: { backgroundColor: main.colors.secondary, height: 3 },
+      }}>
         <Tab.Screen name="Home" component={ Home } />
         <Tab.Screen name="Stash" component={ Stash } />
         <Tab.Screen name="Market" component={ Market } />
