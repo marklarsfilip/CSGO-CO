@@ -21,7 +21,6 @@ function updateWears(caseWears) {
 function getWear(availableWears) {
   const randomizedIndex =
     Math.floor(Math.random() * Object.keys(availableWears).length) + 0;
-  console.log(randomizedIndex);
   const key = Object.keys(availableWears)[randomizedIndex];
   const value = availableWears[key];
   return value;

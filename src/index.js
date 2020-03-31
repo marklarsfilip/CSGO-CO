@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, SafeAreaView, Button, StatusBar, StyleSheet, Text} from 'react-native';
+import {
+  View,
+  SafeAreaView,
+  Button,
+  StatusBar,
+  StyleSheet,
+  Text,
+} from 'react-native';
 
 //router
 import Tabs from './router';
@@ -10,6 +17,8 @@ import TopInformation from './scenes/globals/TopBar';
 //scripts
 import generateItem from './scripts/generateItem';
 
+let item = {};
+
 const App = () => (
   <SafeAreaView style={{flex: 1}}>
     <StatusBar backgroundColor="#222" barStyle="light-content" />
@@ -19,12 +28,15 @@ const App = () => (
     <Button title="PRess me" onPress={() => this.getTempUser} />
     <View style={{flex: 1}}>
       <Tabs />
-      <Text>{JSON.stringify(generateItem())}</Text>
+      <Text>{JSON.stringify(item)}</Text>
+      <Button
+        title="Generate!"
+        onPress={() => (item.generated = generateItem())}
+      />
     </View>
   </SafeAreaView>
 );
 
-// const item = testItem();
 console.log(generateItem());
 
 export default App;

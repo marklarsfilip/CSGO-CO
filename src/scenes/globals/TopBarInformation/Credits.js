@@ -32,8 +32,6 @@ const Credits = () => (
 
 var test = _storeData();
 var test2 = _retrieveData();
-console.log(test);
-console.log(test2);
 
 export default Credits;
 

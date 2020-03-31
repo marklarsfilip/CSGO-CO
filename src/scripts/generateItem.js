@@ -15,7 +15,7 @@ export default function generateItem() {
     },
     types: ['bags', 'clothes', 'shoes'],
     collection: 'test',
-    patterns: ['Gucci', 'Louis Vuitton'],
+    patterns: ['clothingBrands', 'animals'],
     wear: [], // ['Pristine', 'Shiny']
   };
 
@@ -26,7 +26,7 @@ export default function generateItem() {
   const wear = generateWear(testCase.wear);
 
   const item = {
-    name: `${pattern} ${type} ${wear}`,
+    name: `${wear.wear} ${pattern.pattern} ${type} `,
     id,
     case: testCase.name,
     rarity,
