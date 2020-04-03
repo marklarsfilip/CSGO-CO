@@ -4,9 +4,9 @@ import {Icon} from 'react-native-elements';
 
 const Notifications = () => (
   <View style={[{justifyContent: 'flex-end'}, styles.item]}>
-    <Icon size={17} name="message" type="font-awsome" color="#FFDF00" />
+    <Icon size={15} name="build" type="material" color="#FFDF00" />
     <Text p style={[{marginLeft: 6}, styles.text]}>
-      0
+      v 0.0.1
     </Text>
   </View>
 );

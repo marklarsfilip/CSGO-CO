@@ -9,21 +9,21 @@ function getRarity(probabilities, hash) {
   const color = '';
   switch (true) {
     case hash >= probabilities.Gray:
-      return 'Gray';
+      return {rarity: 'Gray', score: 10};
     case hash >= probabilities.White:
-      return 'White';
+      return {rarity: 'White', score: 20};
     case hash >= probabilities.Green:
-      return 'Green';
+      return {rarity: 'Green', score: 30};
     case hash >= probabilities.Blue:
-      return 'Blue';
+      return {rarity: 'Blue', score: 40};
     case hash >= probabilities.Purple:
-      return 'Purple';
+      return {rarity: 'Purple', score: 50};
     case hash >= probabilities.Pink:
-      return 'Pink';
+      return {rarity: 'Pink', score: 60};
     case hash >= probabilities.Orange:
-      return 'Orange';
+      return {rarity: 'Orange', score: 70};
     case hash >= probabilities.Yellow:
-      return 'Yellow';
+      return {rarity: 'Yellow', score: 80};
     default:
     // code block
   }

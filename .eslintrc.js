@@ -19,6 +19,7 @@ module.exports = {
           _utils: './src/utils',
         },
       },
+      'babel-module': {},
     },
   },
 };

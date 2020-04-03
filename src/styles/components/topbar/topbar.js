@@ -1,13 +1,14 @@
 import {StyleSheet} from 'react-native';
 
 // Colors
-import main from '_styles';
+// import mainStyles from '_styles';
 
 const styles = StyleSheet.create({
   container: {
     flexWrap: 'nowrap',
     height: 30,
-    backgroundColor: main.colors.primary,
+    // backgroundColor: mainStyles.colors.primary,
+    backgroundColor: '#33333D',
     paddingHorizontal: 10,
   },
 });

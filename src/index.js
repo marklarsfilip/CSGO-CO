@@ -20,7 +20,7 @@ import generateItem from './scripts/generateItem';
 // Styles
 import main from '_styles';
 
-let item = {};
+let item = generateItem();
 
 const App = () => (
   <SafeAreaView style={{flex: 1, backgroundColor: main.colors.primary}}>
@@ -30,7 +30,7 @@ const App = () => (
     </SafeAreaView>
     <View style={{flex: 1}}>
       <Tabs />
-      <Text>{JSON.stringify(item)}</Text>
+      <Text style={{color: '#fff'}}>{JSON.stringify(item)}</Text>
       <Button
         title="Generate!"
         onPress={() => (item.generated = generateItem())}
@@ -38,7 +38,5 @@ const App = () => (
     </View>
   </SafeAreaView>
 );
-
-console.log(generateItem());
 
 export default App;
