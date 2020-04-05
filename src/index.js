@@ -13,6 +13,7 @@ import Tabs from './router';
 
 //global views
 import TopInformation from './scenes/globals/TopBar';
+import ItemGraphic from './components/global/item';
 
 //scripts
 import generateItem from './scripts/generateItem';
@@ -30,6 +31,7 @@ const App = () => (
     </SafeAreaView>
     <View style={{flex: 1}}>
       <Tabs />
+      <ItemGraphic item={item} />
       <Text style={{color: '#fff'}}>{JSON.stringify(item)}</Text>
       <Button
         title="Generate!"
@@ -39,4 +41,5 @@ const App = () => (
   </SafeAreaView>
 );
 
+console.log(item);
 export default App;

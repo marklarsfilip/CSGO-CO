@@ -19,20 +19,31 @@ export default function generateItem() {
     wear: [], // ['Pristine', 'Shiny']
   };
 
+  function calculateScore(rarity, type, pattern, wear) {
+    let score = 0;
+    score = score + rarity.score;
+    score = score + type.score;
+    score = score + pattern.score;
+    score = score + wear.score;
+    return score;
+  }
+
   const id = generateId();
   const rarity = generateRarity(testCase.rarityLevel);
   const type = generateType(testCase.types);
   const pattern = generatePattern(testCase.patterns);
   const wear = generateWear(testCase.wear);
+  const itemScore = calculateScore(rarity, type, pattern, wear);
 
   const item = {
-    name: `${wear.wear} ${pattern.pattern} ${type} `,
+    name: `${wear.wear} ${pattern.pattern} ${type.type}`,
     id,
     case: testCase.name,
     rarity,
     type,
     pattern,
     wear,
+    itemScore,
   };
 
   return item;
