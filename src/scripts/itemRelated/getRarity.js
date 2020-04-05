@@ -1,3 +1,5 @@
+import defaultRarities from '../../data/exports/rarities';
+
 function getRandomNumber() {
   const min = 1;
   const max = 1000;
@@ -41,22 +43,12 @@ export default function generateRarity(rarityBoost) {
   let probabilities;
   let color;
   const hash = getRandomNumber();
-  let defaultProbabilities = {
-    Yellow: 1,
-    Orange: 5,
-    Pink: 10,
-    Purple: 25,
-    Blue: 75,
-    Green: 150,
-    White: 500,
-    Gray: 750,
-  };
 
   if (rarityBoost) {
-    probabilities = updateProbabilities(defaultProbabilities, rarityBoost);
+    probabilities = updateProbabilities(defaultRarities, rarityBoost);
     color = getRarity(probabilities, hash);
   } else {
-    color = getRarity(defaultProbabilities, hash);
+    color = getRarity(defaultRarities, hash);
   }
 
   return color;

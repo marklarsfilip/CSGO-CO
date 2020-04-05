@@ -3,31 +3,11 @@ import generateType from './itemRelated/getType';
 import generateWear from './itemRelated/getWear';
 import generatePattern from './itemRelated/getPattern';
 import generateId from './itemRelated/getId';
+import calculateScore from './itemRelated/calculateScore';
+
+import testCase from '../data/exports/cases';
 
 export default function generateItem() {
-  const testCase = {
-    name: 'testCase 2020',
-    id: '2.001',
-    rarityLevel: {
-      Yellow: 2,
-      Orange: 10,
-      Pink: 25,
-    },
-    types: ['bags', 'clothes', 'shoes'],
-    collection: 'test',
-    patterns: ['clothingBrands', 'animals'],
-    wear: [], // ['Pristine', 'Shiny']
-  };
-
-  function calculateScore(rarity, type, pattern, wear) {
-    let score = 0;
-    score = score + rarity.score;
-    score = score + type.score;
-    score = score + pattern.score;
-    score = score + wear.score;
-    return score;
-  }
-
   const id = generateId();
   const rarity = generateRarity(testCase.rarityLevel);
   const type = generateType(testCase.types);

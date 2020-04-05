@@ -5,6 +5,7 @@ const ItemGraphic = (props) => (
   <View style={[{flexDirection: 'row'}, styles.item]}>
     <Image
       style={styles.tinyImage}
+      resizeMode="contain"
       source={{
         uri: props.item.type.graphic,
       }}
@@ -24,7 +25,7 @@ const styles = StyleSheet.create({
     paddingTop: 3,
   },
   tinyImage: {
-    width: 50,
     height: 50,
+    width: 50,
   },
 });
