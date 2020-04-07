@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
   container: {
     // backgroundColor: mainStyles.colors.primary,
     backgroundColor: '#33333D',
+    paddingVertical: 20,
     flex: 1,
   },
 });
