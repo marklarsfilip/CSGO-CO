@@ -1,8 +1,35 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, ScrollView} from 'react-native';
 
 // Components
-import ContentBox from '../global/contentBox';
+import CaseBox from '../global/caseBox';
+
+const hotCasesArray = [
+  {
+    name: 'BAG CASE',
+    image: 'https://cdn2.iconfinder.com/data/icons/sports-and-games-3-3/48/147-512.png',
+    price: '',
+    discount: '',
+  },
+  {
+    name: 'GOLD CASE',
+    image: 'https://cdn2.iconfinder.com/data/icons/sports-and-games-3-3/48/147-512.png',
+    price: '',
+    discount: '',
+  },
+  {
+    name: 'SILVER CASE',
+    image: 'https://cdn2.iconfinder.com/data/icons/sports-and-games-3-3/48/147-512.png',
+    price: '',
+    discount: '',
+  },
+  {
+    name: 'BRONZE CASE',
+    image: 'https://cdn2.iconfinder.com/data/icons/sports-and-games-3-3/48/147-512.png',
+    price: '',
+    discount: '',
+  }
+];
 
 const HotCases = () => (
   <View style={{marginBottom: 30}}>
@@ -15,20 +42,32 @@ const HotCases = () => (
       }}>
       HOT CASES
     </Text>
-    <View
-      style={{
-        paddingVertical: 10,
-        paddingHorizontal: 14,
-        backgroundColor: '#484851',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-      }}>
-      <ContentBox width={'35%'} marginRight={13} />
-      <ContentBox width={'35%'} marginRight={13} />
-      <ContentBox width={'35%'} marginRight={13} />
-      <ContentBox width={'35%'} marginRight={13} />
-    </View>
+      <View
+        style={{
+          paddingVertical: 10,
+          paddingHorizontal: 14,
+          backgroundColor: '#484851',
+          height: 120,
+          width: '100%'
+        }}>
+          <ScrollView
+            contentContainerStyle={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+
+            }}
+            horizontal
+          >
+            {hotCasesArray.map((l) => (
+              <CaseBox
+                case={l}
+                width={120}
+                marginRight={13}
+              />
+            ))}
+          </ScrollView>
+      </View>
   </View>
 );
 
