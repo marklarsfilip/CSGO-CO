@@ -11,6 +11,32 @@ const hotCasesArray = [
       'https://cdn2.iconfinder.com/data/icons/sports-and-games-3-3/48/147-512.png',
     price: '',
     discount: '',
+    availableItems: [
+      {
+        name: 'MEGA CROCS',
+        image:
+          'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
+        score: '390',
+      },
+      {
+        name: 'COOL CROCS',
+        image:
+          'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
+        score: '240',
+      },
+      {
+        name: 'SHITTY CROCS',
+        image:
+          'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
+        score: '210',
+      },
+      {
+        name: 'BAD CROCS',
+        image:
+          'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
+        score: '150',
+      },
+    ],
   },
   {
     name: 'GOLD CASE',
@@ -18,6 +44,32 @@ const hotCasesArray = [
       'https://cdn2.iconfinder.com/data/icons/sports-and-games-3-3/48/147-512.png',
     price: '',
     discount: '',
+    availableItems: [
+      {
+        name: 'MEGA CROCS',
+        image:
+          'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
+        score: '390',
+      },
+      {
+        name: 'COOL CROCS',
+        image:
+          'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
+        score: '240',
+      },
+      {
+        name: 'SHITTY CROCS',
+        image:
+          'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
+        score: '210',
+      },
+      {
+        name: 'BAD CROCS',
+        image:
+          'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
+        score: '150',
+      },
+    ],
   },
   {
     name: 'SILVER CASE',
@@ -25,6 +77,32 @@ const hotCasesArray = [
       'https://cdn2.iconfinder.com/data/icons/sports-and-games-3-3/48/147-512.png',
     price: '',
     discount: '',
+    availableItems: [
+      {
+        name: 'MEGA CROCS',
+        image:
+          'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
+        score: '390',
+      },
+      {
+        name: 'COOL CROCS',
+        image:
+          'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
+        score: '240',
+      },
+      {
+        name: 'SHITTY CROCS',
+        image:
+          'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
+        score: '210',
+      },
+      {
+        name: 'BAD CROCS',
+        image:
+          'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
+        score: '150',
+      },
+    ],
   },
   {
     name: 'BRONZE CASE',
@@ -32,6 +110,32 @@ const hotCasesArray = [
       'https://cdn2.iconfinder.com/data/icons/sports-and-games-3-3/48/147-512.png',
     price: '',
     discount: '',
+    availableItems: [
+      {
+        name: 'MEGA CROCS',
+        image:
+          'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
+        score: '390',
+      },
+      {
+        name: 'COOL CROCS',
+        image:
+          'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
+        score: '240',
+      },
+      {
+        name: 'SHITTY CROCS',
+        image:
+          'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
+        score: '210',
+      },
+      {
+        name: 'BAD CROCS',
+        image:
+          'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
+        score: '150',
+      },
+    ],
   },
 ];
 
