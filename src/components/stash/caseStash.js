@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text} from 'react-native';
 
 //Load stored items
-const StashedItemsArray = [
+const StashedCasesArray = [
   {
     name: 'MEGA SPORTSBAG',
     image:
@@ -66,9 +66,9 @@ const StashedItemsArray = [
 ];
 
 //Components
-import ItemBox from '../global/itemBox';
+import CaseBox from '../global/caseBox';
 
-const ItemStash = ({navigation}) => (
+const CaseStash = ({navigation}) => (
   <View style={{marginBottom: 10}}>
     <View
       style={{
@@ -82,12 +82,12 @@ const ItemStash = ({navigation}) => (
         width: '100%',
         height: '100%',
       }}>
-      {StashedItemsArray.map((obj, index) => (
-        <ItemBox
-          item={obj}
-          width={'23%'}
-          marginBottom={15}
-          marginRight={'2%'}
+      {StashedCasesArray.map((obj, index) => (
+        <CaseBox
+          case={obj}
+          width={96}
+          marginRight={13}
+          marginBottom={13}
           key={index}
         />
       ))}
@@ -95,4 +95,4 @@ const ItemStash = ({navigation}) => (
   </View>
 );
 
-export default ItemStash;
+export default CaseStash;
