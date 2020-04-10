@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
-const ContentBox = (props) => (
+const ContentBox = props => (
   <View
     style={{
       marginBottom: props.marginBottom,
@@ -10,7 +10,7 @@ const ContentBox = (props) => (
       aspectRatio: 1,
       width: props.width,
     }}>
-    <Text></Text>
+    <Text />
   </View>
 );
 

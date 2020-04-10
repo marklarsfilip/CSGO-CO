@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, Image, StyleSheet, Text} from 'react-native';
 
-const ItemGraphic = (props) => (
+const ItemGraphic = props => (
   <View style={[{flexDirection: 'row'}, styles.item]}>
     <Image
       style={styles.tinyImage}

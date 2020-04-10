@@ -2,12 +2,38 @@ import React from 'react';
 import {View, Text} from 'react-native';
 
 //Load stored items
+const showcaseItemsArray = [
+  {
+    name: 'MEGA CROCS',
+    image:
+      'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
+    score: '390',
+  },
+  {
+    name: 'COOL CROCS',
+    image:
+      'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
+    score: '240',
+  },
+  {
+    name: 'SHITTY CROCS',
+    image:
+      'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
+    score: '210',
+  },
+  {
+    name: 'BAD CROCS',
+    image:
+      'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
+    score: '150',
+  },
+];
 
 //Components
-import ContentBox from '../global/contentBox';
+import ItemBox from '../global/itemBox';
 
-const PersonalShowcase = () => (
-  <View style={{marginBottom: 30}}>
+const PersonalShowcase = ({navigation}) => (
+  <View style={{marginBottom: 10}}>
     <Text
       style={{
         color: '#fff',
@@ -26,13 +52,11 @@ const PersonalShowcase = () => (
         flexWrap: 'wrap',
         justifyContent: 'space-between',
         alignItems: 'center',
+        width: '100%',
       }}>
-      <ContentBox width={'31%'} marginBottom={13} />
-      <ContentBox width={'31%'} marginBottom={13} />
-      <ContentBox width={'31%'} marginBottom={13} />
-      <ContentBox width={'31%'} marginBottom={13} />
-      <ContentBox width={'31%'} marginBottom={13} />
-      <ContentBox width={'31%'} marginBottom={13} />
+      {showcaseItemsArray.map((obj, index) => (
+        <ItemBox item={obj} width={'31%'} marginBottom={15} key={index} />
+      ))}
     </View>
   </View>
 );
