@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, Text, ScrollView} from 'react-native';
+import {View, Text, ScrollView, StyleSheet} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
 // Components
 import CaseBox from '../global/caseBox';
@@ -167,11 +168,21 @@ const HotCases = () => (
         }}
         horizontal>
         {hotCasesArray.map((obj, index) => (
-          <CaseBox case={obj} width={120} marginRight={13} key={index} />
+          <CaseBox case={obj} width={130} marginRight={13} key={index} />
         ))}
       </ScrollView>
+      <View style={{ height: 100, width: 130, position: 'absolute', right: 0, top: 10 }}>
+        <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={['rgba(0,0,0,0)', 'rgba(51,51,61,1)']} style={styles.linearGradient}>
+        </LinearGradient>
+      </View>
     </View>
   </View>
 );
 
 export default HotCases;
+
+var styles = StyleSheet.create({
+  linearGradient: {
+    flex: 1,
+  },
+});

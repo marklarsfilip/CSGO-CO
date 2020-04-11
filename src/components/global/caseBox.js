@@ -90,9 +90,9 @@ const CaseBox = props => {
                   alignItems: 'center',
                 }}
                 horizontal>
-                {props.case.availableItems.map((obj, index) => (
+                {props.case.availableItems ? props.case.availableItems.map((obj, index) => (
                   <ItemBox item={obj} width={120} marginRight={13} key={index} />
-                ))}
+                )) : null}
               </ScrollView>
             </View>
             <View style={{ flexDirection: 'row', alignItems: 'center', marginVertical: 20 }}>
@@ -105,7 +105,7 @@ const CaseBox = props => {
               </TouchableHighlight>
               <ButtonSmall
                 onPress={() => Alert.alert('Buying case, run animation.')}
-                title="BUY CASE"
+                title="OPEN CASE"
                 buttonStyle={{ backgroundColor: '#1EB980', marginLeft: 20, padding: 10, elevation: 2, }}
                 buttonTextStyle={{ textAlign: 'center', color: 'white' }}
               />
