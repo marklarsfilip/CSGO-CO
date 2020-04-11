@@ -18,7 +18,15 @@ import ItemBox from '../global/itemBox';
 const CaseBox = props => {
   const [modalVisible, setModalVisible] = useState(false);
   return (
-    <View>
+    <View
+      style={{
+        marginBottom: props.marginBottom,
+        marginRight: props.marginRight,
+        backgroundColor: '#33333D',
+        aspectRatio: 1,
+        width: props.width,
+        paddingTop: props.paddingTop,
+      }}>
       <Modal
         animationType="fade"
         transparent={true}
@@ -28,24 +36,28 @@ const CaseBox = props => {
         }}>
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <View style={{
-              backgroundColor: '#33333D',
-              height: 30,
-              width: '100%',
-              shadowColor: '#000',
-              borderBottomColor: '#1EB980',
-              borderBottomWidth: 2,
-              shadowOffset: {
-                width: 0,
-                height: 2,
-              },
-              shadowOpacity: 0.25,
-              shadowRadius: 3.84,
-            }}
-            >
+            <View
+              style={{
+                backgroundColor: '#33333D',
+                height: 30,
+                width: '100%',
+                shadowColor: '#000',
+                borderBottomColor: '#1EB980',
+                borderBottomWidth: 2,
+                shadowOffset: {
+                  width: 0,
+                  height: 2,
+                },
+                shadowOpacity: 0.25,
+                shadowRadius: 3.84,
+              }}>
               <Text
-                style={{ textAlign: 'center', color: 'white', lineHeight: 30, fontSize: 16 }}
-              >
+                style={{
+                  textAlign: 'center',
+                  color: 'white',
+                  lineHeight: 30,
+                  fontSize: 16,
+                }}>
                 BUY "{props.case.name}"
               </Text>
             </View>
@@ -54,11 +66,10 @@ const CaseBox = props => {
                 backgroundColor: '#33333D',
                 aspectRatio: 1,
                 width: props.width,
-                marginVertical: 20
-              }}
-            >
+                marginVertical: 20,
+              }}>
               <Image
-                style={{flex: 0.80}}
+                style={{flex: 0.8}}
                 resizeMode="contain"
                 source={{
                   uri: props.case.image,
@@ -67,7 +78,7 @@ const CaseBox = props => {
               <View
                 style={{
                   backgroundColor: '#1EB980',
-                  flex: 0.20,
+                  flex: 0.2,
                 }}>
                 <Text
                   style={{
@@ -76,13 +87,20 @@ const CaseBox = props => {
                     textShadowColor: 'rgba(0, 0, 0, 0.75)',
                     textShadowOffset: {width: -1, height: -1},
                     textShadowRadius: 10,
-                    paddingTop: 2
+                    paddingTop: 2,
                   }}>
                   {props.case.name}
                 </Text>
               </View>
             </View>
-            <View style={{ height: 120, flexDirection: 'row', backgroundColor: '#484851', padding: 10, marginVertical: 20 }}>
+            <View
+              style={{
+                height: 120,
+                flexDirection: 'row',
+                backgroundColor: '#484851',
+                padding: 10,
+                marginVertical: 20,
+              }}>
               <ScrollView
                 contentContainerStyle={{
                   flexDirection: 'row',
@@ -90,12 +108,24 @@ const CaseBox = props => {
                   alignItems: 'center',
                 }}
                 horizontal>
-                {props.case.availableItems ? props.case.availableItems.map((obj, index) => (
-                  <ItemBox item={obj} width={120} marginRight={13} key={index} />
-                )) : null}
+                {props.case.availableItems
+                  ? props.case.availableItems.map((obj, index) => (
+                      <ItemBox
+                        item={obj}
+                        width={120}
+                        marginRight={13}
+                        key={index}
+                      />
+                    ))
+                  : null}
               </ScrollView>
             </View>
-            <View style={{ flexDirection: 'row', alignItems: 'center', marginVertical: 20 }}>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                marginVertical: 20,
+              }}>
               <TouchableHighlight
                 style={{...styles.modalButton, backgroundColor: '#33333D'}}
                 onPress={() => {
@@ -106,8 +136,13 @@ const CaseBox = props => {
               <ButtonSmall
                 onPress={() => Alert.alert('Buying case, run animation.')}
                 title="OPEN CASE"
-                buttonStyle={{ backgroundColor: '#1EB980', marginLeft: 20, padding: 10, elevation: 2, }}
-                buttonTextStyle={{ textAlign: 'center', color: 'white' }}
+                buttonStyle={{
+                  backgroundColor: '#1EB980',
+                  marginLeft: 20,
+                  padding: 10,
+                  elevation: 2,
+                }}
+                buttonTextStyle={{textAlign: 'center', color: 'white'}}
               />
             </View>
           </View>
@@ -119,12 +154,8 @@ const CaseBox = props => {
         }}>
         <View
           style={{
-            marginBottom: props.marginBottom,
-            marginRight: props.marginRight,
-            backgroundColor: '#33333D',
-            aspectRatio: 1,
-            width: props.width,
-            paddingVertical: 3,
+            width: '100%',
+            height: '100%',
           }}>
           <Image
             style={{flex: 0.75}}

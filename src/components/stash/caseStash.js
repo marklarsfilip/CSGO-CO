@@ -1,67 +1,80 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, ScrollView} from 'react-native';
 
 //Load stored items
 const StashedCasesArray = [
   {
-    name: 'MEGA SPORTSBAG',
+    name: 'GOLD',
     image:
-      'https://cdn2.iconfinder.com/data/icons/sports-and-games-3-3/48/147-512.png',
-    score: '390',
+      'https://vignette.wikia.nocookie.net/piratepower/images/3/32/Icon_Gold_Chest.png/revision/latest/scale-to-width-down/340?cb=20160313142816',
   },
   {
-    name: 'COOL SPORTSBAG',
+    name: 'GOLD',
     image:
-      'https://cdn2.iconfinder.com/data/icons/sports-and-games-3-3/48/147-512.png',
-    score: '240',
+      'https://vignette.wikia.nocookie.net/piratepower/images/3/32/Icon_Gold_Chest.png/revision/latest/scale-to-width-down/340?cb=20160313142816',
   },
   {
-    name: 'SHITTY CROCS',
+    name: 'GOLD',
     image:
-      'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
-    score: '210',
+      'https://vignette.wikia.nocookie.net/piratepower/images/3/32/Icon_Gold_Chest.png/revision/latest/scale-to-width-down/340?cb=20160313142816',
   },
   {
-    name: 'BAD CROCS',
-    image:
-      'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
-    score: '150',
+    name: 'ANCIENT',
+    image: 'https://i.dlpng.com/static/png/756977_thumb.png',
   },
   {
-    name: 'MEGA CROCS',
-    image:
-      'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
-    score: '390',
+    name: 'ANCIENT',
+    image: 'https://i.dlpng.com/static/png/756977_thumb.png',
   },
   {
-    name: 'COOL CROCS',
-    image:
-      'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
-    score: '240',
+    name: 'ANCIENT',
+    image: 'https://i.dlpng.com/static/png/756977_thumb.png',
   },
   {
-    name: 'SHITTY CROCS',
-    image:
-      'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
-    score: '210',
+    name: 'ANCIENT',
+    image: 'https://i.dlpng.com/static/png/756977_thumb.png',
   },
   {
-    name: 'BAD CROCS',
+    name: 'MYSTERY',
     image:
-      'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
-    score: '150',
+      'https://gamepedia.cursecdn.com/smite_gamepedia/thumb/8/88/TreasureRoll_Mystery.png/256px-TreasureRoll_Mystery.png?version=29627397fc3b65b4a11c079866661c50',
   },
   {
-    name: 'MEGA CROCS',
+    name: 'MYSTERY',
     image:
-      'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
-    score: '390',
+      'https://gamepedia.cursecdn.com/smite_gamepedia/thumb/8/88/TreasureRoll_Mystery.png/256px-TreasureRoll_Mystery.png?version=29627397fc3b65b4a11c079866661c50',
   },
   {
-    name: 'COOL CROCS',
+    name: 'MYSTERY',
     image:
-      'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
-    score: '240',
+      'https://gamepedia.cursecdn.com/smite_gamepedia/thumb/8/88/TreasureRoll_Mystery.png/256px-TreasureRoll_Mystery.png?version=29627397fc3b65b4a11c079866661c50',
+  },
+  {
+    name: 'ANCIENT',
+    image: 'https://i.dlpng.com/static/png/756977_thumb.png',
+  },
+  {
+    name: 'MYSTERY',
+    image:
+      'https://gamepedia.cursecdn.com/smite_gamepedia/thumb/8/88/TreasureRoll_Mystery.png/256px-TreasureRoll_Mystery.png?version=29627397fc3b65b4a11c079866661c50',
+  },
+  {
+    name: 'ANCIENT',
+    image: 'https://i.dlpng.com/static/png/756977_thumb.png',
+  },
+  {
+    name: 'MYSTERY',
+    image:
+      'https://gamepedia.cursecdn.com/smite_gamepedia/thumb/8/88/TreasureRoll_Mystery.png/256px-TreasureRoll_Mystery.png?version=29627397fc3b65b4a11c079866661c50',
+  },
+  {
+    name: 'ANCIENT',
+    image: 'https://i.dlpng.com/static/png/756977_thumb.png',
+  },
+  {
+    name: 'MYSTERY',
+    image:
+      'https://gamepedia.cursecdn.com/smite_gamepedia/thumb/8/88/TreasureRoll_Mystery.png/256px-TreasureRoll_Mystery.png?version=29627397fc3b65b4a11c079866661c50',
   },
 ];
 
@@ -69,28 +82,34 @@ const StashedCasesArray = [
 import CaseBox from '../global/caseBox';
 
 const CaseStash = ({navigation}) => (
-  <View style={{marginBottom: 10}}>
+  <View style={{backgroundColor: '#33333D'}}>
     <View
       style={{
+        paddingTop: 24,
         paddingVertical: 8,
         paddingHorizontal: 15,
         backgroundColor: '#484851',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        width: '100%',
         height: '100%',
+        width: '100%',
       }}>
-      {StashedCasesArray.map((obj, index) => (
-        <CaseBox
-          case={obj}
-          width={96}
-          marginRight={13}
-          marginBottom={13}
-          key={index}
-        />
-      ))}
+      <ScrollView
+        contentContainerStyle={{
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}>
+        {StashedCasesArray.map((obj, index) => (
+          <CaseBox
+            case={obj}
+            width={'31%'}
+            marginRight={0}
+            marginBottom={12}
+            paddingTop={3}
+            key={index}
+          />
+        ))}
+      </ScrollView>
     </View>
   </View>
 );

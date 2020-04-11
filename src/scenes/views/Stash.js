@@ -14,33 +14,29 @@ const Stash = () => (
   <View style={main.scenes.home.container}>
     <View
       style={{
-        backgroundColor: '#33333D',
-        flex: 1,
         marginTop: 20,
+        flex: 1,
+        backgroundColor: '#33333D',
       }}>
       <Tab.Navigator
         tabBarOptions={{
           activeTintColor: main.colors.white,
           inactiveTintColor: '#999',
-          activeBackgroundColor: '#484851',
-          inactiveBackgroundColor: '#33333D',
           labelStyle: {fontSize: 15},
           style: {
+            elevation: 0,
             marginLeft: 15,
             backgroundColor: '#33333D',
           },
           tabStyle: {
-            backgroundColor: '#484851',
-            borderTopEndRadius: 5,
-            borderTopStartRadius: 5,
-            marginLeft: 10,
+            backgroundColor: '#33333D',
+            shadowOpacity: 0,
             marginBottom: 3,
             width: 100,
           },
           indicatorStyle: {
             backgroundColor: main.colors.secondary,
             height: 3,
-            marginLeft: 10,
           },
           animationEnabled: false,
           swipeEnabled: false,
