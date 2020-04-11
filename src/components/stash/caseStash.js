@@ -2,81 +2,9 @@ import React from 'react';
 import {View, Text, ScrollView} from 'react-native';
 
 //Load stored items
-const StashedCasesArray = [
-  {
-    name: 'GOLD',
-    image:
-      'https://vignette.wikia.nocookie.net/piratepower/images/3/32/Icon_Gold_Chest.png/revision/latest/scale-to-width-down/340?cb=20160313142816',
-  },
-  {
-    name: 'GOLD',
-    image:
-      'https://vignette.wikia.nocookie.net/piratepower/images/3/32/Icon_Gold_Chest.png/revision/latest/scale-to-width-down/340?cb=20160313142816',
-  },
-  {
-    name: 'GOLD',
-    image:
-      'https://vignette.wikia.nocookie.net/piratepower/images/3/32/Icon_Gold_Chest.png/revision/latest/scale-to-width-down/340?cb=20160313142816',
-  },
-  {
-    name: 'ANCIENT',
-    image: 'https://i.dlpng.com/static/png/756977_thumb.png',
-  },
-  {
-    name: 'ANCIENT',
-    image: 'https://i.dlpng.com/static/png/756977_thumb.png',
-  },
-  {
-    name: 'ANCIENT',
-    image: 'https://i.dlpng.com/static/png/756977_thumb.png',
-  },
-  {
-    name: 'ANCIENT',
-    image: 'https://i.dlpng.com/static/png/756977_thumb.png',
-  },
-  {
-    name: 'MYSTERY',
-    image:
-      'https://gamepedia.cursecdn.com/smite_gamepedia/thumb/8/88/TreasureRoll_Mystery.png/256px-TreasureRoll_Mystery.png?version=29627397fc3b65b4a11c079866661c50',
-  },
-  {
-    name: 'MYSTERY',
-    image:
-      'https://gamepedia.cursecdn.com/smite_gamepedia/thumb/8/88/TreasureRoll_Mystery.png/256px-TreasureRoll_Mystery.png?version=29627397fc3b65b4a11c079866661c50',
-  },
-  {
-    name: 'MYSTERY',
-    image:
-      'https://gamepedia.cursecdn.com/smite_gamepedia/thumb/8/88/TreasureRoll_Mystery.png/256px-TreasureRoll_Mystery.png?version=29627397fc3b65b4a11c079866661c50',
-  },
-  {
-    name: 'ANCIENT',
-    image: 'https://i.dlpng.com/static/png/756977_thumb.png',
-  },
-  {
-    name: 'MYSTERY',
-    image:
-      'https://gamepedia.cursecdn.com/smite_gamepedia/thumb/8/88/TreasureRoll_Mystery.png/256px-TreasureRoll_Mystery.png?version=29627397fc3b65b4a11c079866661c50',
-  },
-  {
-    name: 'ANCIENT',
-    image: 'https://i.dlpng.com/static/png/756977_thumb.png',
-  },
-  {
-    name: 'MYSTERY',
-    image:
-      'https://gamepedia.cursecdn.com/smite_gamepedia/thumb/8/88/TreasureRoll_Mystery.png/256px-TreasureRoll_Mystery.png?version=29627397fc3b65b4a11c079866661c50',
-  },
-  {
-    name: 'ANCIENT',
-    image: 'https://i.dlpng.com/static/png/756977_thumb.png',
-  },
-  {
-    name: 'MYSTERY',
-    image:
-      'https://gamepedia.cursecdn.com/smite_gamepedia/thumb/8/88/TreasureRoll_Mystery.png/256px-TreasureRoll_Mystery.png?version=29627397fc3b65b4a11c079866661c50',
-  },
-];
+import exampleStorage from '../../data/exports/exampleUserStorage';
+
+const caseStash = exampleStorage.caseStash;
 
 //Components
 import CaseBox from '../global/caseBox';
@@ -99,7 +27,7 @@ const CaseStash = ({navigation}) => (
           justifyContent: 'space-between',
           alignItems: 'center',
         }}>
-        {StashedCasesArray.map((obj, index) => (
+        {caseStash.map((obj, index) => (
           <CaseBox
             case={obj}
             width={'31%'}

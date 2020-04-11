@@ -1,25 +1,11 @@
 import React from 'react';
-import {View, Text, StyleSheet, AsyncStorage} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import {Icon} from 'react-native-elements';
 
-let credits = 0;
-// create a function that saves your data asyncronously
-const _storeData = async () => {
-  try {
-    await AsyncStorage.setItem('credits', '1337');
-  } catch (error) {
-    // Error saving data
-  }
-};
+//Load stored items
+import exampleStorage from '../../../data/exports/exampleUserStorage';
 
-// fetch the data back asyncronously
-const _retrieveData = async () => {
-  try {
-    credits = parseInt(await AsyncStorage.getItem('credits'), 10);
-  } catch (error) {
-    // Error retrieving data
-  }
-};
+const credits = exampleStorage.credits;
 
 const Credits = () => (
   <View style={[{justifyContent: 'flex-start'}, styles.item]}>
@@ -29,9 +15,6 @@ const Credits = () => (
     </Text>
   </View>
 );
-
-var test = _storeData();
-var test2 = _retrieveData();
 
 export default Credits;
 
