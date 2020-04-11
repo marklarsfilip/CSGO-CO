@@ -7,6 +7,8 @@ const ItemBox = props => {
   return (
     <View
       style={{
+        borderWidth: 3,
+        borderColor: props.borderColor,
         marginBottom: props.marginBottom,
         marginRight: props.marginRight,
         backgroundColor: '#33333D',

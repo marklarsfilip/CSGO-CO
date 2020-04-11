@@ -8,24 +8,28 @@ const showcaseItemsArray = [
     image:
       'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
     score: '390',
+    rarity: 'yellow',
   },
   {
     name: 'COOL CROCS',
     image:
       'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
     score: '240',
+    rarity: 'green',
   },
   {
     name: 'SHITTY CROCS',
     image:
       'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
     score: '210',
+    rarity: 'gray',
   },
   {
     name: 'BAD CROCS',
     image:
       'https://cdn2.iconfinder.com/data/icons/clothes-shoes-vol-1/64/crocs-512.png',
     score: '150',
+    rarity: 'white',
   },
 ];
 
@@ -55,7 +59,13 @@ const PersonalShowcase = ({navigation}) => (
         width: '100%',
       }}>
       {showcaseItemsArray.map((obj, index) => (
-        <ItemBox item={obj} width={'31%'} marginBottom={15} key={index} />
+        <ItemBox
+          item={obj}
+          width={'31%'}
+          marginBottom={15}
+          borderColor={obj.rarity}
+          key={index}
+        />
       ))}
     </View>
   </View>
