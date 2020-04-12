@@ -8,16 +8,16 @@ const caseStash = exampleStorage.caseStash;
 
 //Components
 import CaseBox from '../global/caseBox';
+import ButtonSmall from '../../components/global/ButtonSmall';
 
 const CaseStash = ({navigation}) => (
-  <View style={{backgroundColor: '#33333D'}}>
+  <View style={{backgroundColor: '#33333D', height: '100%'}}>
     <View
       style={{
         paddingTop: 24,
         paddingVertical: 8,
         paddingHorizontal: 15,
         backgroundColor: '#484851',
-        height: '100%',
         width: '100%',
       }}>
       <ScrollView
@@ -38,6 +38,21 @@ const CaseStash = ({navigation}) => (
           />
         ))}
       </ScrollView>
+    </View>
+    <View style={{alignSelf: 'flex-end', width: 160, marginTop: 15}}>
+      <ButtonSmall
+        onPress={() => navigation.navigate('MARKET')}
+        title="GET CASES"
+        buttonStyle={{
+          backgroundColor: '#1EB980',
+          marginRight: 20,
+          paddingRight: 3,
+          paddingLeft: 3,
+          paddingTop: 8,
+          paddingBottom: 8,
+        }}
+        buttonTextStyle={{textAlign: 'center', color: 'white'}}
+      />
     </View>
   </View>
 );

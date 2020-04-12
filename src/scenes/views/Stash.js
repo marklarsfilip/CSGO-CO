@@ -14,7 +14,7 @@ const Stash = () => (
   <View style={main.scenes.home.container}>
     <View
       style={{
-        marginTop: 20,
+        marginTop: 10,
         flex: 1,
         backgroundColor: '#33333D',
       }}>
