@@ -27,20 +27,14 @@ const GetCoins = props => (
           paddingLeft: 14,
           paddingRight: 0,
           backgroundColor: '#484851',
-          height: 120,
           width: '100%',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          justifyContent: 'flex-start',
         }}>
-        <ScrollView
-          contentContainerStyle={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-          horizontal>
-          {coinOffers.map((obj, index) => (
-            <OfferBox offer={obj} width={110} key={index} />
-          ))}
-        </ScrollView>
+        {coinOffers.map((obj, index) => (
+          <OfferBox offer={obj} width={'45%'} key={index} />
+        ))}
         <View
           style={{
             height: 100,
@@ -48,14 +42,40 @@ const GetCoins = props => (
             position: 'absolute',
             right: 0,
             top: 10,
+          }}
+        />
+      </View>
+    </View>
+    <View style={{marginBottom: 30}}>
+      <Text
+        style={{
+          color: '#fff',
+          fontSize: 16,
+          paddingHorizontal: 14,
+          paddingVertical: 10,
+        }}>
+        FREE COINS
+      </Text>
+      <View
+        style={{
+          paddingVertical: 10,
+          paddingLeft: 14,
+          paddingRight: 0,
+          backgroundColor: '#484851',
+          width: '100%',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          justifyContent: 'flex-start',
+        }}>
+        <Text
+          style={{
+            color: '#fff',
+            fontSize: 16,
+            paddingHorizontal: 14,
+            paddingVertical: 10,
           }}>
-          <LinearGradient
-            start={{x: 0, y: 0}}
-            end={{x: 1, y: 0}}
-            colors={['rgba(0,0,0,0)', 'rgba(51,51,61,1)']}
-            style={styles.linearGradient}
-          />
-        </View>
+          MINI GAMES AND SOCIAL MEDIA PROMOTIONS
+        </Text>
       </View>
     </View>
   </View>
