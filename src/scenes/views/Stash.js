@@ -8,6 +8,8 @@ import main from '_styles';
 // Components
 import ItemStash from '../../components/stash/itemStash';
 import CaseStash from '../../components/stash/caseStash';
+import OpenCaseTest from '../../components/stash/openCase';
+
 const Tab = createMaterialTopTabNavigator();
 
 const Stash = () => (
@@ -43,6 +45,7 @@ const Stash = () => (
         }}>
         <Tab.Screen name="Items" component={ItemStash} />
         <Tab.Screen name="Cases" component={CaseStash} />
+        <Tab.Screen name="Test" component={OpenCaseTest} />
       </Tab.Navigator>
     </View>
   </View>
