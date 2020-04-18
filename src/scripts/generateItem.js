@@ -19,11 +19,12 @@ export default function generateItem() {
     name: `${wear.wear} ${pattern.pattern} ${type.type}`,
     id,
     case: testCase.name,
-    rarity,
+    rarity: rarity.rarity,
     type,
     pattern,
     wear,
-    itemScore,
+    score: itemScore,
+    image: type.graphic,
   };
 
   return item;

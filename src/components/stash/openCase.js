@@ -1,73 +1,58 @@
-import React from 'react';
-import {
-  NativeModules,
-  LayoutAnimation,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  View,
-} from 'react-native';
+import React, {useRef} from 'react';
+import {Animated, Text, View, StyleSheet, Button} from 'react-native';
 
-//Components
 import ItemBox from '../global/itemBox';
 
-const { UIManager } = NativeModules;
-
-//Load stored items
 import exampleStorage from '../../data/exports/exampleUserStorage';
 
-const itemStash = exampleStorage.itemStash;
+const randomCase = exampleStorage.exampleGeneratedCase;
 
-UIManager.setLayoutAnimationEnabledExperimental &&
-  UIManager.setLayoutAnimationEnabledExperimental(true);
+export default function App() {
+  // fadeAnim will be used as the value for opacity. Initial Value: 0
+  const leftAnim = useRef(new Animated.Value(60)).current;
 
-export default class App extends React.Component {
-  state = {
-    x: 0,
+  const moveLeft = () => {
+    // Will change fadeAnim value to 1 in 5 seconds
+    Animated.timing(leftAnim, {
+      toValue: -2000,
+      duration: 6000,
+    }).start();
   };
 
-  _onPress = () => {
-    // Animate the update
-    LayoutAnimation.configureNext(
-      LayoutAnimation.create(
-        6000,
-        LayoutAnimation.Types.easeOut,
-        ''
-      )
-    );
-    this.setState({x: this.state.x - 5150 })
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-      {itemStash.map((obj, index) => (
-        <ItemBox
-          item={obj}
-          width={'23%'}
-          marginBottom={15}
-          marginRight={'2%'}
-          borderColor={obj.rarity}
-          key={index}
-          left={this.state.x + (index * 95)}
-        />
-      ))}
-        <TouchableOpacity onPress={this._onPress} style={{ position: 'absolute' }}>
-          <View style={styles.button}>
-            <Text style={styles.buttonText}>Press me!</Text>
-          </View>
-        </TouchableOpacity>
+  return (
+    <View style={{flex: 1, backgroundColor: '#33333D'}}>
+      <View style={{zIndex: 2, position: 'absolute', width: 5, height: 20, left: '50%', top: 145, backgroundColor: '#ffff00'}} />
+      <Animated.View
+        style={[
+          styles.container,
+          {
+            left: leftAnim, // Bind opacity to animated value
+          },
+        ]}>
+        {randomCase.map((obj, index) => (
+          <ItemBox
+            item={obj}
+            width={'23%'}
+            marginBottom={15}
+            marginRight={'2%'}
+            borderColor={obj.rarity}
+            key={index}
+          />
+        ))}
+      </Animated.View>
+      <View style={styles.button}>
+        <Button title="Open case!" onPress={moveLeft} />
       </View>
-    );
-  }
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row'
+    justifyContent: 'flex-start',
+    flexDirection: 'row',
   },
   box: {
     width: 90,
@@ -79,8 +64,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 15,
     marginTop: 15,
-  },
-  buttonText: {
     color: '#fff',
     fontWeight: 'bold',
   },

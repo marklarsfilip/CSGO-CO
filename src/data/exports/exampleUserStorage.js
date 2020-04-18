@@ -177,11 +177,19 @@ const showcase = [
 ];
 const credits = '420';
 
+import generateItem from '../../scripts/generateItem';
+const exampleGeneratedCase = [];
+
+for (let i = 0; i <= 30; i++) {
+  exampleGeneratedCase.push(generateItem());
+}
+
 const exampleStorage = {
   caseStash: caseStash,
   itemStash: itemStash,
   showcase: showcase,
   credits: credits,
+  exampleGeneratedCase: exampleGeneratedCase,
 };
 
 export default exampleStorage;
