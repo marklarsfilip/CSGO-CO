@@ -1,52 +1,65 @@
-import React, {useRef} from 'react';
-import {View, Text, Animated, Button, StyleSheet} from 'react-native';
+import React from 'react';
+import {
+  NativeModules,
+  LayoutAnimation,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  View,
+} from 'react-native';
 
-export default function OpenCaseTest() {
-  // fadeAnim will be used as the value for opacity. Initial Value: 0
-  const fadeAnim = useRef(new Animated.Value(0)).current;
+//Components
+import ItemBox from '../global/itemBox';
 
-  const fadeIn = () => {
-    // Will change fadeAnim value to 1 in 5 seconds
-    Animated.timing(fadeAnim, {
-      toValue: 1,
-      duration: 2000,
-    }).start();
+const { UIManager } = NativeModules;
+
+//Load stored items
+import exampleStorage from '../../data/exports/exampleUserStorage';
+
+const itemStash = exampleStorage.itemStash;
+
+UIManager.setLayoutAnimationEnabledExperimental &&
+  UIManager.setLayoutAnimationEnabledExperimental(true);
+
+export default class App extends React.Component {
+  state = {
+    x: 0,
   };
 
-  const fadeOut = () => {
-    // Will change fadeAnim value to 0 in 5 seconds
-    Animated.timing(fadeAnim, {
-      toValue: 0,
-      duration: 2000,
-    }).start();
-  };
-  return (
-    <View
-      style={{marginBottom: 20, height: '100%', backgroundColor: '#33333D'}}>
-      <Text
-        style={{
-          fontSize: 16,
-          padding: 20,
-          color: 'white',
-          backgroundColor: '#33333D',
-        }}>
-        TEST CASE-OPENING
-      </Text>
-      <Animated.View
-        style={[
-          styles.fadingContainer,
-          {
-            opacity: fadeAnim, // Bind opacity to animated value
-          },
-        ]}>
-        <Text style={styles.fadingText}>Fading View!</Text>
-      </Animated.View>
-      <View style={styles.buttonRow}>
-        <Button title="Fade In" onPress={fadeIn} />
-        <Button title="Fade Out" onPress={fadeOut} />
+  _onPress = () => {
+    // Animate the update
+    LayoutAnimation.configureNext(
+      LayoutAnimation.create(
+        6000,
+        LayoutAnimation.Types.easeOut,
+        ''
+      )
+    );
+    this.setState({x: this.state.x - 5150 })
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+      {itemStash.map((obj, index) => (
+        <ItemBox
+          item={obj}
+          width={'23%'}
+          marginBottom={15}
+          marginRight={'2%'}
+          borderColor={obj.rarity}
+          key={index}
+          left={this.state.x + (index * 95)}
+        />
+      ))}
+        <TouchableOpacity onPress={this._onPress} style={{ position: 'absolute' }}>
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>Press me!</Text>
+          </View>
+        </TouchableOpacity>
       </View>
-    </View>
-  );
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -54,19 +67,21 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    flexDirection: 'row'
   },
-  fadingContainer: {
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    backgroundColor: 'powderblue',
+  box: {
+    width: 90,
+    height: 90,
+    backgroundColor: 'red',
   },
-  fadingText: {
-    fontSize: 28,
-    textAlign: 'center',
-    margin: 10,
+  button: {
+    backgroundColor: 'black',
+    paddingHorizontal: 20,
+    paddingVertical: 15,
+    marginTop: 15,
   },
-  buttonRow: {
-    flexDirection: 'row',
-    marginVertical: 16,
+  buttonText: {
+    color: '#fff',
+    fontWeight: 'bold',
   },
 });
